@@ -2,14 +2,14 @@ from reddit  import client
 from reddit.user import User
 from reddit.reddits import Subreddit
 
-bojohan = client.login('bojohan')
+bojohan = client.login('Victohry')
 
-bojohan.me()
+print bojohan.me()
 
 
-# python = Subreddit("python")
+python = Subreddit("python")
 #
-# python.hot()
+print python.hot()
 
 
 

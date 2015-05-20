@@ -12,7 +12,24 @@ class Subreddit(object):
 
 
     def hot(self):
-        pprint(reddit.client.request(url_hot.format(subreddit=self.subreddit)))
+        #return all posts
+
+        data = reddit.client.request(url_hot.format(subreddit=self.subreddit))
+
+
+        firstpost=data['data']['children'][0]
+
+        return Post(firstpost)
+
+
+class Post(object):
+
+    def __init__(self, data):
+        print data['data'].keys()
+        self.author = data['author']
+        self.selftext = data['selftext']
+
+
 
 
 
