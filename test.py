@@ -4,12 +4,12 @@ from reddit.reddits import Subreddit
 
 bojohan = client.login('Victohry')
 
-print bojohan.me()
+#print bojohan.me()
 
 
-python = Subreddit("python")
+python = Subreddit("tifu")
 #
-print python.hot()
+print python.hot().title()
 
 
 

@@ -17,17 +17,30 @@ class Subreddit(object):
         data = reddit.client.request(url_hot.format(subreddit=self.subreddit))
 
 
-        firstpost=data['data']['children'][0]
+        firstpost = data['data']['children'][0]
 
         return Post(firstpost)
+
+        #return firstpost
 
 
 class Post(object):
 
     def __init__(self, data):
-        print data['data'].keys()
-        self.author = data['author']
-        self.selftext = data['selftext']
+        #print data['data'].keys()
+        #self.author = data['author']
+        #self.selftext = data['selftext']
+
+        self.data = data
+
+    def author(self):
+        return self.data['data']['author']
+
+    def text(self):
+        return self.data['data']['selftext']
+
+    def title(self):
+        return self.data['data']['title']
 
 
 
